@@ -1,0 +1,656 @@
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Personal Branding &mdash; Bahru Mafdloluddin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=Inter:wght@400;500;600;700;800&amp;family=Luckiest+Guy&amp;family=Chewy&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#eaf7ff",
+              surface: "#eafaf6",
+              background: "#eef9ff",
+              primary: "#04263d",
+              "primary-container": "#0a3a5c",
+              "secondary-container": "#48cae4",
+              "tertiary-container": "#ff9e5e",
+              success: "#5eead4",
+              error: "#ff6b6b",
+              "text-secondary": "#3d5a73",
+              "border-primary": "#04263d",
+            },
+            fontFamily: {
+              body: ["Inter", "sans-serif"],
+              "display-hero": ["Luckiest Guy", "cursive"],
+              "headline-lg": ["Chewy", "cursive"],
+              "headline-xl": ["Luckiest Guy", "cursive"],
+              "stat-number": ["Bebas Neue", "cursive"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { font-family: "Inter", sans-serif; background: #eef9ff; color: #04263d; }
+      .grain {
+        background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+        background-size: 18px 18px;
+      }
+      .twinkle { animation: twinkle 2.8s ease-in-out infinite; }
+      @keyframes twinkle {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.2; transform: scale(0.6); }
+      }
+      .bubble {
+        position: absolute;
+        bottom: -40px;
+        border-radius: 9999px;
+        background: radial-gradient(circle at 32% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0.15));
+        pointer-events: none;
+        animation: rise 14s linear infinite;
+      }
+      @keyframes rise {
+        0% { transform: translateY(0) scale(1); opacity: 0; }
+        8% { opacity: 0.8; }
+        100% { transform: translateY(-110vh) scale(1.1); opacity: 0; }
+      }
+      .jelly-float {
+        animation: jelly 7s ease-in-out infinite;
+      }
+      @keyframes jelly {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(-12px, -18px) scale(1.04); }
+        66% { transform: translate(10px, -8px) scale(0.97); }
+      }
+      .fish-swim {
+        animation: fish 18s linear infinite;
+      }
+      @keyframes fish {
+        0% { transform: translate(110vw, 0) scaleX(1); }
+        49.9% { transform: translate(-10vw, 0) scaleX(1); }
+        50% { transform: translate(-10vw, 0) scaleX(-1); }
+        100% { transform: translate(110vw, 0) scaleX(-1); }
+      }
+      .card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+      .card-lift:hover {
+        transform: translateY(-8px) rotate(-0.5deg);
+        box-shadow: 0 26px 44px -18px rgba(4,38,61,0.4);
+      }
+      .card-lift img {
+        transition: transform 0.4s ease;
+      }
+      .card-lift:hover img {
+        transform: scale(1.08);
+      }
+      .back-pill {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .back-pill:hover {
+        transform: translateY(-3px) rotate(-2deg);
+        box-shadow: 0 5px 0 rgba(4,38,61,0.3);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="relative min-h-screen overflow-hidden bg-[#48cae4]">
+      <div class="grain pointer-events-none absolute inset-0">
+        <div class="absolute inset-0" style="background-image: linear-gradient(to bottom, rgba(234,247,255,0.55), rgba(72,202,228,0.30), rgba(4,38,61,0.60)), url('BACKGROUND%20PERSONAL%20BRANDING%20PAGE%20SUPER%20HD.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+      </div>
+
+      <svg class="twinkle absolute left-[6%] top-[15%] h-5 w-5 text-[#ffd166]"><use href="#star-shape"/></svg>
+      <svg class="twinkle absolute right-[10%] top-[22%] h-4 w-4 text-white" style="animation-delay:0.8s"><use href="#star-shape"/></svg>
+      <span class="jelly-float absolute right-[8%] top-[8%] hidden text-4xl opacity-40 md:block">🪼</span>
+      <span class="bubble" style="left:10%; width:10px; height:10px; animation-delay:1s;"></span>
+      <span class="bubble" style="left:80%; width:14px; height:14px; animation-delay:4s;"></span>
+      <span class="bubble" style="left:50%; width:9px; height:9px; animation-delay:7s;"></span>
+
+      <svg width="0" height="0" style="position:absolute">
+        <defs>
+          <symbol id="star-shape" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 2c.9 4.9 2.6 7.9 5.6 9.2l1.9.8-1.9.8c-3 1.3-4.7 4.3-5.6 9.2-.9-4.9-2.6-7.9-5.6-9.2l-1.9-.8 1.9-.8c3-1.3 4.7-4.3 5.6-9.2Z"/>
+          </symbol>
+        </defs>
+      </svg>
+
+      <header class="relative z-10 px-5 pt-5 md:px-8">
+        <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 rounded-3xl border-[3px] border-[#04263d] bg-[#eaf7ff]/95 px-5 py-3 shadow-[6px_6px_0_rgba(4,38,61,0.35)]">
+          <a href="code.html#about" class="text-xl font-extrabold text-primary md:text-2xl" style="font-family: Chewy, cursive;">BAHRU MAFDLOLUDDIN <span class="text-[#ff9e5e]">&#9749;</span></a>
+          <a href="code.html#works" class="back-pill rounded-full border-[3px] border-[#04263d] bg-[#ffd166] px-5 py-2 text-sm font-extrabold text-[#04263d]">&larr; Back to portfolio</a>
+        </div>
+      </header>
+
+      <main class="relative z-10 mx-auto max-w-7xl px-5 pb-20 pt-10 md:px-8">
+        <div class="text-center">
+          <span class="inline-flex items-center gap-2 rounded-full border-[3px] border-[#04263d] bg-[#ff8fa3] px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.2em] text-[#04263d]">🎨 Personal Branding &middot; 04</span>
+          <h1 class="mt-6 text-5xl font-bold leading-[1.05] text-[#eaf7ff] md:text-7xl" style="font-family: Luckiest Guy, cursive; text-shadow: 4px 4px 0 rgba(4,38,61,0.7), 0 0 30px rgba(72,202,228,0.35);">PERSONAL BRANDING GALLERY 🎨</h1>
+          <p class="mx-auto mt-4 max-w-xl text-base font-semibold text-[#04263d]/90 md:text-lg">Crafting authentic visual identities that reflect your story, values, and professional presence.</p>
+        </div>        <div class="mt-14 flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border-[3px] border-[#04263d] px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.25em] text-[#04263d]" style="background:#ff8fa3">POSTER PERSONAL</span>
+          <span class="hidden h-[3px] flex-1 rounded-full bg-[#eaf7ff]/80 md:block"></span>
+        </div>
+        <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="POSTER ASA BIODATA" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/POSTER%20PERSONAL/POSTER%20ASA%20BIODATA.jpg"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">POSTER ASA BIODATA</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ff8fa3">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="POSTER ASA COOL" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/POSTER%20PERSONAL/POSTER%20ASA%20COOL.jpg"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">POSTER ASA COOL</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ff8fa3">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="POSTER ASA FOCUS" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/POSTER%20PERSONAL/POSTER%20ASA%20FOCUS.jpg"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">POSTER ASA FOCUS</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ff8fa3">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="POSTER ASA HELLO" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/POSTER%20PERSONAL/POSTER%20ASA%20HELLO.jpg"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">POSTER ASA HELLO</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ff8fa3">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="POSTER ASA MOVIE" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/POSTER%20PERSONAL/POSTER%20ASA%20MOVIE.jpg"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">POSTER ASA MOVIE</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ff8fa3">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="POSTER ASA PINK" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/POSTER%20PERSONAL/POSTER%20ASA%20PINK.jpg"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">POSTER ASA PINK</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ff8fa3">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="POSTER ASA YELLOW BLUE" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/POSTER%20PERSONAL/POSTER%20ASA%20YELLOW%20BLUE.jpg"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">POSTER ASA YELLOW BLUE</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ff8fa3">VIEW</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="mt-14 flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border-[3px] border-[#04263d] px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.25em] text-[#04263d]" style="background:#ff9e5e">POSTER FOOD</span>
+          <span class="hidden h-[3px] flex-1 rounded-full bg-[#eaf7ff]/80 md:block"></span>
+        </div>
+        <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="poster dimsumsum 1" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/POSTER%20FOOD/poster%20dimsumsum%201.jpg"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">poster dimsumsum 1</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ff9e5e">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="poster dimsumsum 2" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/POSTER%20FOOD/poster%20dimsumsum%202.jpg"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">poster dimsumsum 2</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ff9e5e">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="poster dimsumsum 3" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/POSTER%20FOOD/poster%20dimsumsum%203.jpg"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">poster dimsumsum 3</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ff9e5e">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="poster dimsumsum 4" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/POSTER%20FOOD/poster%20dimsumsum%204.jpg"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">poster dimsumsum 4</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ff9e5e">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="poster pretzel 1" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/POSTER%20FOOD/poster%20pretzel%201.jpg"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">poster pretzel 1</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ff9e5e">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="poster pretzel 2" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/POSTER%20FOOD/poster%20pretzel%202.jpg"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">poster pretzel 2</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ff9e5e">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="poster pretzel 3" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/POSTER%20FOOD/poster%20pretzel%203.jpg"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">poster pretzel 3</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ff9e5e">VIEW</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="mt-14 flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border-[3px] border-[#04263d] px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.25em] text-[#04263d]" style="background:#5eead4">DESAIN BANNER</span>
+          <span class="hidden h-[3px] flex-1 rounded-full bg-[#eaf7ff]/80 md:block"></span>
+        </div>
+        <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="BANNER BACK TO SCHOOL" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20BANNER/BANNER%20BACK%20TO%20SCHOOL.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">BANNER BACK TO SCHOOL</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#5eead4">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="BANNER BENQ" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20BANNER/BANNER%20BENQ.jpg"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">BANNER BENQ</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#5eead4">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="BANNER COLORFUL" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20BANNER/BANNER%20COLORFUL.jpg"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">BANNER COLORFUL</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#5eead4">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="BANNER MEGA SALE" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20BANNER/BANNER%20MEGA%20SALE.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">BANNER MEGA SALE</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#5eead4">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="BANNER MONITOR GAMING" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20BANNER/BANNER%20MONITOR%20GAMING.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">BANNER MONITOR GAMING</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#5eead4">VIEW</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="mt-14 flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border-[3px] border-[#04263d] px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.25em] text-[#04263d]" style="background:#48cae4">DESAIN PRODUCT</span>
+          <span class="hidden h-[3px] flex-1 rounded-full bg-[#eaf7ff]/80 md:block"></span>
+        </div>
+        <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="DESAIN BPRODUCT MONITOR TOUCHSCREEN SERIES" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20BPRODUCT%20MONITOR%20TOUCHSCREEN%20SERIES.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">DESAIN BPRODUCT MONITOR TOUCHSCREEN SERIES</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#48cae4">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="DESAIN BROADCAST MONITOR 22 SERIES" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20BROADCAST%20MONITOR%2022%20SERIES.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">DESAIN BROADCAST MONITOR 22 SERIES</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#48cae4">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="DESAIN PRODUCT CASING PC" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20CASING%20PC.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">DESAIN PRODUCT CASING PC</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#48cae4">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="DESAIN PRODUCT COOLING PAD" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20COOLING%20PAD.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">DESAIN PRODUCT COOLING PAD</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#48cae4">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="DESAIN PRODUCT LIQUID COOLER" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20LIQUID%20COOLER.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">DESAIN PRODUCT LIQUID COOLER</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#48cae4">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="DESAIN PRODUCT MINI PC CUBI" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20MINI%20PC%20CUBI.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">DESAIN PRODUCT MINI PC CUBI</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#48cae4">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="DESAIN PRODUCT MONITOR  22 INCH SERIES" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20MONITOR%20%2022%20INCH%20SERIES.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">DESAIN PRODUCT MONITOR  22 INCH SERIES</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#48cae4">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="DESAIN PRODUCT MONITOR LENOVO L24 24'' SERIES" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20MONITOR%20LENOVO%20L24%2024''%20SERIES.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">DESAIN PRODUCT MONITOR LENOVO L24 24'' SERIES</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#48cae4">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="DESAIN PRODUCT MONITOR LENOVO LEGION R25F-30" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20MONITOR%20LENOVO%20LEGION%20R25F-30.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">DESAIN PRODUCT MONITOR LENOVO LEGION R25F-30</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#48cae4">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="DESAIN PRODUCT MONITOR LG LED & GAMING ULTRAGEAR, 24 & 27 SERIES" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20MONITOR%20LG%20LED%20%26%20GAMING%20ULTRAGEAR%2C%2024%20%26%2027%20SERIES.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">DESAIN PRODUCT MONITOR LG LED & GAMING ULTRAGEAR, 24 & 27 SERIES</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#48cae4">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="DESAIN PRODUCT MONITOR SPC SM" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20MONITOR%20SPC%20SM.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">DESAIN PRODUCT MONITOR SPC SM</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#48cae4">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="DESAIN PRODUCT NOTEBOOK COLORFULL SERIES" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20NOTEBOOK%20COLORFULL%20SERIES.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">DESAIN PRODUCT NOTEBOOK COLORFULL SERIES</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#48cae4">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="DESAIN PRODUCT PSU BRONZE" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20PSU%20BRONZE.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">DESAIN PRODUCT PSU BRONZE</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#48cae4">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="DESAIN PRODUCT WD" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20WD.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">DESAIN PRODUCT WD</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#48cae4">VIEW</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="mt-14 flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border-[3px] border-[#04263d] px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.25em] text-[#04263d]" style="background:#ffd166">UI,UX</span>
+          <span class="hidden h-[3px] flex-1 rounded-full bg-[#eaf7ff]/80 md:block"></span>
+        </div>
+        <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP.png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (2)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(2).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (2)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (3)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(3).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (3)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (4)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(4).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (4)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (5)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(5).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (5)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (6)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(6).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (6)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (7)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(7).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (7)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (8)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(8).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (8)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (9)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(9).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (9)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (10)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(10).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (10)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (11)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(11).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (11)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (12)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(12).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (12)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (13)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(13).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (13)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (14)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(14).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (14)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (15)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(15).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (15)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (16)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(16).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (16)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (17)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(17).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (17)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (18)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(18).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (18)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="grid aspect-square place-items-center overflow-hidden border-b-[3px] border-[#04263d] bg-white"><img alt="APP (19)" class="h-full w-full object-cover" src="PERSONAL%20BRANDING/UI%2CUX/APP%20(19).png"/></div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">APP (19)</span>
+              <span class="shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]" style="background:#ffd166">VIEW</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="mt-14 flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border-[3px] border-[#04263d] px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.25em] text-[#eaf7ff]" style="background:#0a6e8f">MODUL</span>
+          <span class="hidden h-[3px] flex-1 rounded-full bg-[#eaf7ff]/80 md:block"></span>
+        </div>
+        <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="relative aspect-[3/4] overflow-hidden border-b-[3px] border-[#04263d] bg-[#0a3a5c]">
+              <iframe src="PERSONAL%20BRANDING/MODUL/MODUL%20LOGO.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" class="h-full w-full bg-white" title="MODUL LOGO" loading="lazy"></iframe>
+              <span class="absolute right-2 top-2 rounded-full bg-[#ffd166] px-2.5 py-0.5 text-[10px] font-extrabold uppercase text-[#04263d]">PDF</span>
+            </div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">MODUL LOGO</span>
+              <span class="shrink-0 rounded-full bg-[#ffd166] px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]">BUKA</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="relative aspect-[3/4] overflow-hidden border-b-[3px] border-[#04263d] bg-[#0a3a5c]">
+              <iframe src="PERSONAL%20BRANDING/MODUL/MODUL%20PROJECT.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" class="h-full w-full bg-white" title="MODUL PROJECT" loading="lazy"></iframe>
+              <span class="absolute right-2 top-2 rounded-full bg-[#ffd166] px-2.5 py-0.5 text-[10px] font-extrabold uppercase text-[#04263d]">PDF</span>
+            </div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">MODUL PROJECT</span>
+              <span class="shrink-0 rounded-full bg-[#ffd166] px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]">BUKA</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="mt-14 flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border-[3px] border-[#04263d] px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.25em] text-[#ffd166]" style="background:#04263d">GRAPHIC STANDARD MANUAL</span>
+          <span class="hidden h-[3px] flex-1 rounded-full bg-[#eaf7ff]/80 md:block"></span>
+        </div>
+        <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <figure class="gallery-item card-lift cursor-pointer overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-white shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="relative aspect-[3/4] overflow-hidden border-b-[3px] border-[#04263d] bg-[#0a3a5c]">
+              <iframe src="PERSONAL%20BRANDING/GSM/GSM%20PDF%20ME.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" class="h-full w-full bg-white" title="GSM PDF ME" loading="lazy"></iframe>
+              <span class="absolute right-2 top-2 rounded-full bg-[#ffd166] px-2.5 py-0.5 text-[10px] font-extrabold uppercase text-[#04263d]">PDF</span>
+            </div>
+            <figcaption class="flex items-center justify-between gap-2 p-4">
+              <span class="truncate font-extrabold uppercase tracking-wide text-[#04263d]">GSM PDF ME</span>
+              <span class="shrink-0 rounded-full bg-[#ffd166] px-2.5 py-0.5 text-[10px] font-extrabold text-[#04263d]">BUKA</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="mt-16 text-center">
+          <a href="code.html#works" class="back-pill inline-flex items-center gap-2 rounded-full border-[3px] border-[#04263d] bg-[#eaf7ff] px-7 py-3 text-base font-extrabold text-[#04263d]">🐚 Dive back to the portfolio</a>
+        </div>
+      </main>
+
+      <footer class="relative z-10 mt-8 border-t-[3px] border-[#48cae4] bg-[#03202f]/95 py-6">
+        <span class="fish-swim absolute bottom-3 left-0 text-xl">🐟</span>
+        <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 text-center md:flex-row md:px-8 md:text-left">
+          <div class="text-xl font-bold text-[#48cae4]" style="font-family: Chewy, cursive;">Bahru Mafdloluddin</div>
+          <p class="text-sm text-white/70">&copy; 2026 Bahru Mafdloluddin Sholeh Rohmad &middot; Personal Branding gallery page</p>
+        </div>
+      </footer>
+    </div>
+
+    <div id="lb" class="fixed inset-0 z-[100] hidden items-center justify-center bg-[#03202f]/95 p-4 backdrop-blur-sm md:p-12">
+      <button id="lbClose" class="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-full border-[3px] border-[#04263d] bg-[#ffd166] text-2xl font-extrabold text-[#04263d] shadow-[0_5px_0_rgba(0,0,0,0.4)] transition hover:-translate-y-1">&times;</button>
+      <button id="lbPrev" class="absolute left-3 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full border-[3px] border-[#04263d] bg-[#eaf7ff] text-3xl font-extrabold text-[#04263d] shadow-[0_5px_0_rgba(0,0,0,0.4)] transition hover:-translate-y-[calc(50%+4px)]">&lsaquo;</button>
+      <button id="lbNext" class="absolute right-3 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full border-[3px] border-[#04263d] bg-[#eaf7ff] text-3xl font-extrabold text-[#04263d] shadow-[0_5px_0_rgba(0,0,0,0.4)] transition hover:-translate-y-[calc(50%+4px)]">&rsaquo;</button>
+      <figure class="flex max-h-full w-full max-w-6xl flex-col items-center">
+        <img id="lbImg" class="max-h-[85vh] w-auto max-w-full rounded-3xl border-[3px] border-[#48cae4] bg-[#0a3d57] object-contain shadow-[0_0_60px_rgba(72,202,228,0.4)]" alt=""/>
+        <iframe id="lbPdf" class="hidden max-h-[88vh] w-full rounded-3xl border-[3px] border-[#48cae4] bg-white shadow-[0_0_60px_rgba(72,202,228,0.4)]" title="PDF"></iframe>
+        <figcaption id="lbCap" class="mt-4 text-center font-extrabold uppercase tracking-[0.2em] text-[#eaf7ff] md:text-lg"></figcaption>
+      </figure>
+      <p id="lbCount" class="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full border-[3px] border-[#04263d] bg-[#eaf7ff] px-4 py-1 text-xs font-extrabold text-[#04263d]">1 / 1</p>
+    </div>
+
+    <script>
+      var gallery = [{"src":"PERSONAL%20BRANDING/POSTER%20PERSONAL/POSTER%20ASA%20BIODATA.jpg","cap":"POSTER ASA BIODATA"},{"src":"PERSONAL%20BRANDING/POSTER%20PERSONAL/POSTER%20ASA%20COOL.jpg","cap":"POSTER ASA COOL"},{"src":"PERSONAL%20BRANDING/POSTER%20PERSONAL/POSTER%20ASA%20FOCUS.jpg","cap":"POSTER ASA FOCUS"},{"src":"PERSONAL%20BRANDING/POSTER%20PERSONAL/POSTER%20ASA%20HELLO.jpg","cap":"POSTER ASA HELLO"},{"src":"PERSONAL%20BRANDING/POSTER%20PERSONAL/POSTER%20ASA%20MOVIE.jpg","cap":"POSTER ASA MOVIE"},{"src":"PERSONAL%20BRANDING/POSTER%20PERSONAL/POSTER%20ASA%20PINK.jpg","cap":"POSTER ASA PINK"},{"src":"PERSONAL%20BRANDING/POSTER%20PERSONAL/POSTER%20ASA%20YELLOW%20BLUE.jpg","cap":"POSTER ASA YELLOW BLUE"},{"src":"PERSONAL%20BRANDING/POSTER%20FOOD/poster%20dimsumsum%201.jpg","cap":"poster dimsumsum 1"},{"src":"PERSONAL%20BRANDING/POSTER%20FOOD/poster%20dimsumsum%202.jpg","cap":"poster dimsumsum 2"},{"src":"PERSONAL%20BRANDING/POSTER%20FOOD/poster%20dimsumsum%203.jpg","cap":"poster dimsumsum 3"},{"src":"PERSONAL%20BRANDING/POSTER%20FOOD/poster%20dimsumsum%204.jpg","cap":"poster dimsumsum 4"},{"src":"PERSONAL%20BRANDING/POSTER%20FOOD/poster%20pretzel%201.jpg","cap":"poster pretzel 1"},{"src":"PERSONAL%20BRANDING/POSTER%20FOOD/poster%20pretzel%202.jpg","cap":"poster pretzel 2"},{"src":"PERSONAL%20BRANDING/POSTER%20FOOD/poster%20pretzel%203.jpg","cap":"poster pretzel 3"},{"src":"PERSONAL%20BRANDING/DESAIN%20BANNER/BANNER%20BACK%20TO%20SCHOOL.png","cap":"BANNER BACK TO SCHOOL"},{"src":"PERSONAL%20BRANDING/DESAIN%20BANNER/BANNER%20BENQ.jpg","cap":"BANNER BENQ"},{"src":"PERSONAL%20BRANDING/DESAIN%20BANNER/BANNER%20COLORFUL.jpg","cap":"BANNER COLORFUL"},{"src":"PERSONAL%20BRANDING/DESAIN%20BANNER/BANNER%20MEGA%20SALE.png","cap":"BANNER MEGA SALE"},{"src":"PERSONAL%20BRANDING/DESAIN%20BANNER/BANNER%20MONITOR%20GAMING.png","cap":"BANNER MONITOR GAMING"},{"src":"PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20BPRODUCT%20MONITOR%20TOUCHSCREEN%20SERIES.png","cap":"DESAIN BPRODUCT MONITOR TOUCHSCREEN SERIES"},{"src":"PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20BROADCAST%20MONITOR%2022%20SERIES.png","cap":"DESAIN BROADCAST MONITOR 22 SERIES"},{"src":"PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20CASING%20PC.png","cap":"DESAIN PRODUCT CASING PC"},{"src":"PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20COOLING%20PAD.png","cap":"DESAIN PRODUCT COOLING PAD"},{"src":"PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20LIQUID%20COOLER.png","cap":"DESAIN PRODUCT LIQUID COOLER"},{"src":"PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20MINI%20PC%20CUBI.png","cap":"DESAIN PRODUCT MINI PC CUBI"},{"src":"PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20MONITOR%20%2022%20INCH%20SERIES.png","cap":"DESAIN PRODUCT MONITOR  22 INCH SERIES"},{"src":"PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20MONITOR%20LENOVO%20L24%2024\u0027\u0027%20SERIES.png","cap":"DESAIN PRODUCT MONITOR LENOVO L24 24\u0027\u0027 SERIES"},{"src":"PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20MONITOR%20LENOVO%20LEGION%20R25F-30.png","cap":"DESAIN PRODUCT MONITOR LENOVO LEGION R25F-30"},{"src":"PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20MONITOR%20LG%20LED%20%26%20GAMING%20ULTRAGEAR%2C%2024%20%26%2027%20SERIES.png","cap":"DESAIN PRODUCT MONITOR LG LED \u0026 GAMING ULTRAGEAR, 24 \u0026 27 SERIES"},{"src":"PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20MONITOR%20SPC%20SM.png","cap":"DESAIN PRODUCT MONITOR SPC SM"},{"src":"PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20NOTEBOOK%20COLORFULL%20SERIES.png","cap":"DESAIN PRODUCT NOTEBOOK COLORFULL SERIES"},{"src":"PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20PSU%20BRONZE.png","cap":"DESAIN PRODUCT PSU BRONZE"},{"src":"PERSONAL%20BRANDING/DESAIN%20PRODUCT/DESAIN%20PRODUCT%20WD.png","cap":"DESAIN PRODUCT WD"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP.png","cap":"APP"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(2).png","cap":"APP (2)"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(3).png","cap":"APP (3)"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(4).png","cap":"APP (4)"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(5).png","cap":"APP (5)"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(6).png","cap":"APP (6)"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(7).png","cap":"APP (7)"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(8).png","cap":"APP (8)"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(9).png","cap":"APP (9)"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(10).png","cap":"APP (10)"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(11).png","cap":"APP (11)"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(12).png","cap":"APP (12)"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(13).png","cap":"APP (13)"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(14).png","cap":"APP (14)"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(15).png","cap":"APP (15)"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(16).png","cap":"APP (16)"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(17).png","cap":"APP (17)"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(18).png","cap":"APP (18)"},{"src":"PERSONAL%20BRANDING/UI%2CUX/APP%20(19).png","cap":"APP (19)"},{"src":"PERSONAL%20BRANDING/MODUL/MODUL%20LOGO.pdf","cap":"MODUL LOGO","type":"pdf"},{"src":"PERSONAL%20BRANDING/MODUL/MODUL%20PROJECT.pdf","cap":"MODUL PROJECT","type":"pdf"},{"src":"PERSONAL%20BRANDING/GSM/GSM%20PDF%20ME.pdf","cap":"GSM PDF ME","type":"pdf"}];
+      var idx = 0;
+      var lb = document.getElementById('lb');
+      var lbImg = document.getElementById('lbImg');
+      var lbPdf = document.getElementById('lbPdf');
+      var lbCap = document.getElementById('lbCap');
+      var lbCount = document.getElementById('lbCount');
+      function render(){
+        var g = gallery[idx];
+        lbCap.textContent = g.cap;
+        lbCount.textContent = (idx + 1) + ' / ' + gallery.length;
+        if(g.type === 'pdf'){
+          lbImg.classList.add('hidden');
+          lbPdf.classList.remove('hidden');
+          lbPdf.src = g.src + '#toolbar=0&navpanes=0&view=FitH';
+          lbPdf.title = g.cap;
+        } else {
+          lbPdf.classList.add('hidden');
+          lbPdf.src = '';
+          lbImg.classList.remove('hidden');
+          lbImg.src = g.src;
+          lbImg.alt = g.cap;
+        }
+      }
+      function openLb(i){
+        idx = i;
+        render();
+        lb.classList.remove('hidden');
+        lb.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLb(){
+        lb.classList.add('hidden');
+        lb.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+      function step(d){
+        idx = (idx + d + gallery.length) % gallery.length;
+        render();
+      }
+      var items = document.querySelectorAll('.gallery-item');
+      items.forEach(function(el, i){
+        el.addEventListener('click', function(ev){
+          ev.preventDefault();
+          openLb(i);
+        });
+      });
+      document.getElementById('lbClose').addEventListener('click', closeLb);
+      document.getElementById('lbPrev').addEventListener('click', function(){ step(-1); });
+      document.getElementById('lbNext').addEventListener('click', function(){ step(1); });
+      lb.addEventListener('click', function(ev){ if(ev.target === lb){ closeLb(); } });
+      document.addEventListener('keydown', function(ev){
+        if(ev.key === 'Escape'){ closeLb(); }
+        else if(ev.key === 'ArrowLeft'){ if(!lb.classList.contains('hidden')){ step(-1); } }
+        else if(ev.key === 'ArrowRight'){ if(!lb.classList.contains('hidden')){ step(1); } }
+      });
+    </script>
+  </body>
+</html>

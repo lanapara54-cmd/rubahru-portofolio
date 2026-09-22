@@ -1,0 +1,823 @@
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>BAHRU MAFDLOLUDDIN — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bebas+Neue&amp;family=Inter:wght@400;500;600;700;800&amp;family=Luckiest+Guy&amp;family=Chewy&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#eaf7ff",
+              surface: "#eafaf6",
+              background: "#eef9ff",
+              primary: "#04263d",
+              "primary-container": "#0a3a5c",
+              "secondary-container": "#48cae4",
+              "tertiary-container": "#ff9e5e",
+              success: "#5eead4",
+              error: "#ff6b6b",
+              "text-secondary": "#3d5a73",
+              "border-primary": "#04263d",
+            },
+            fontFamily: {
+              body: ["Inter", "sans-serif"],
+              "display-hero": ["Luckiest Guy", "cursive"],
+              "headline-lg": ["Chewy", "cursive"],
+              "headline-xl": ["Luckiest Guy", "cursive"],
+              "stat-number": ["Bebas Neue", "cursive"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { font-family: "Inter", sans-serif; background: #eef9ff; color: #04263d; }
+      .grain {
+        background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+        background-size: 18px 18px;
+      }
+      .grain-dark {
+        background-image: radial-gradient(rgba(4,38,61,0.06) 1px, transparent 1px);
+        background-size: 18px 18px;
+      }
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marquee-scroll 30s linear infinite;
+      }
+      @keyframes marquee-scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+      .twinkle { animation: twinkle 2.8s ease-in-out infinite; }
+      @keyframes twinkle {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.2; transform: scale(0.6); }
+      }
+      .bubble {
+        position: absolute;
+        bottom: -40px;
+        border-radius: 9999px;
+        background: radial-gradient(circle at 32% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0.15));
+        pointer-events: none;
+        animation: rise 14s linear infinite;
+      }
+      @keyframes rise {
+        0% { transform: translateY(0) scale(1); opacity: 0; }
+        8% { opacity: 0.8; }
+        100% { transform: translateY(-110vh) scale(1.1); opacity: 0; }
+      }
+      .jelly-float {
+        animation: jelly 7s ease-in-out infinite;
+      }
+      @keyframes jelly {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(-12px, -18px) scale(1.04); }
+        66% { transform: translate(10px, -8px) scale(0.97); }
+      }
+      .fish-swim {
+        animation: fish 18s linear infinite;
+      }
+      @keyframes fish {
+        0% { transform: translate(110vw, 0) scaleX(1); }
+        49.9% { transform: translate(-10vw, 0) scaleX(1); }
+        50% { transform: translate(-10vw, 0) scaleX(-1); }
+        100% { transform: translate(110vw, 0) scaleX(-1); }
+      }
+      .starfish-spin {
+        animation: starfish 24s linear infinite;
+        transform-origin: center;
+      }
+      @keyframes starfish {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+      .card-lift:hover {
+        transform: translateY(-8px) rotate(-0.5deg);
+        box-shadow: 0 26px 44px -18px rgba(4,38,61,0.4);
+      }
+      header nav a {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      header nav a:hover {
+        transform: translateY(-3px) rotate(-2deg);
+        box-shadow: 0 5px 0 rgba(4,38,61,0.3);
+      }
+      @keyframes bob {
+        0%, 100% { transform: translateY(0) rotate(2deg); }
+        50% { transform: translateY(-12px) rotate(3deg); }
+      }
+      @keyframes sway {
+        0%, 100% { transform: rotate(-5deg); }
+        50% { transform: rotate(6deg); }
+      }
+      .seaweed-sway {
+        transform-origin: 50% 100%;
+        animation: sway 4s ease-in-out infinite;
+      }
+      @keyframes text-move {
+        0% { transform: translateY(0) rotate(0deg) scale(1); }
+        25% { transform: translateY(-14px) rotate(-6deg) scale(1.06); }
+        50% { transform: translateY(0) rotate(0deg) scale(1); }
+        75% { transform: translateY(-8px) rotate(6deg) scale(1.04); }
+        100% { transform: translateY(0) rotate(0deg) scale(1); }
+      }
+      .text-move {
+        animation: text-move 0.6s ease;
+      }
+      .poke-letter {
+        display: inline-block;
+        cursor: pointer;
+        user-select: none;
+      }
+      .bubble-letter {
+        display: inline-block;
+        cursor: pointer;
+        user-select: none;
+        transition: transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
+      }
+      .bubble-letter:hover {
+        transform: translateY(-10px) scale(1.12) rotate(-3deg);
+        color: #48cae4;
+        text-shadow: 0 0 22px rgba(72,202,228,0.9);
+      }
+      .letter-popped {
+        animation: letter-pop 0.6s ease forwards;
+      }
+      @keyframes letter-pop {
+        0% { transform: scale(1) translateY(0); opacity: 1; filter: blur(0); }
+        35% { transform: scale(1.4) translateY(-10px); opacity: 0.55; filter: blur(1px); }
+        100% { transform: scale(0.15) translateY(-30px); opacity: 0; filter: blur(4px); }
+      }
+      .letter-bubble {
+        position: fixed;
+        border-radius: 9999px;
+        background: radial-gradient(circle at 32% 30%, rgba(255,255,255,0.95), rgba(72,202,228,0.25) 60%, rgba(72,202,228,0.05));
+        border: 2px solid rgba(255,255,255,0.7);
+        box-shadow: inset -3px -3px 8px rgba(72,202,228,0.35);
+        pointer-events: none;
+        z-index: 60;
+        animation: letter-bubble-rise 1.15s ease-out forwards;
+      }
+      @keyframes letter-bubble-rise {
+        0% { transform: translate(-50%, -50%) scale(0.3); opacity: 0; }
+        18% { opacity: 1; }
+        100% { transform: translate(-50%, -260px) scale(1.35); opacity: 0; }
+      }
+      .photo-bob {
+        animation: bob 6s ease-in-out infinite;
+      }
+      .photo-bob:hover {
+        animation-play-state: paused;
+      }
+      @keyframes pop-in {
+        0% { transform: scale(0); opacity: 0; }
+        70% { transform: scale(1.12); }
+        100% { transform: scale(1); opacity: 1; }
+      }
+      .pop-in {
+        animation: pop-in 0.6s ease backwards;
+      }
+      .wave-divider {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        z-index: 5;
+      }
+      .wave-anim {
+        display: block;
+        width: 200%;
+        height: 100%;
+        animation: wave-slide 14s linear infinite;
+        will-change: transform;
+      }
+      @keyframes wave-slide {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+      .tentacle {
+        position: absolute;
+        top: 42px;
+        width: 3px;
+        height: 44px;
+        border-radius: 9999px;
+        background: linear-gradient(to bottom, #ff9e5e, rgba(255,158,94,0.15));
+        transform-origin: top center;
+        animation: tentacle-sway 1.6s ease-in-out infinite alternate;
+      }
+      @keyframes tentacle-sway {
+        from { transform: rotate(-16deg); }
+        to { transform: rotate(16deg); }
+      }
+    </style>
+  </head>
+  <body class="antialiased overflow-x-hidden bg-background">
+
+    <svg width="0" height="0" style="position:absolute">
+      <defs>
+        <path id="star-shape" d="M12 0l2.8 9.2L24 12l-9.2 2.8L12 24l-2.8-9.2L0 12l9.2-2.8z" fill="currentColor"/>
+      </defs>
+    </svg>
+
+    <!-- ======================= HEADER ======================= -->
+    <header class="sticky top-0 z-50 border-b-4 border-primary bg-surface-bright/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 md:px-8">
+        <a href="#intro" class="flex items-center gap-2">
+          <span class="grid h-11 w-11 -ml-4 place-items-center rounded-full bg-secondary-container text-2xl shadow-[0_4px_0_rgba(4,38,61,0.35)]">🐚</span>
+          <span class="inline-block text-2xl text-primary font-bold" style="font-family: Chewy, cursive;"><span class="poke-letter">B</span><span class="poke-letter">A</span><span class="poke-letter">H</span><span class="poke-letter">R</span><span class="poke-letter">U</span> <span class="text-[#ff9e5e]"><span class="poke-letter">M</span><span class="poke-letter">A</span><span class="poke-letter">F</span><span class="poke-letter">D</span><span class="poke-letter">L</span><span class="poke-letter">O</span><span class="poke-letter">L</span><span class="poke-letter">U</span><span class="poke-letter">D</span><span class="poke-letter">D</span><span class="poke-letter">I</span><span class="poke-letter">N</span></span></span>
+        </a>
+        <div class="hidden items-center gap-2 font-bold md:flex">
+          <a href="#intro" class="rounded-full border-[3px] border-primary bg-surface px-4 py-1.5 text-sm">HOME</a>
+          <a href="#about" class="rounded-full border-[3px] border-primary bg-surface px-4 py-1.5 text-sm">ABOUT ME</a>
+          <a href="#tools" class="rounded-full border-[3px] border-primary bg-surface px-4 py-1.5 text-sm">DESIGN TOOLS</a>
+          <a href="#works" class="rounded-full border-[3px] border-primary bg-surface px-4 py-1.5 text-sm">WORKS</a>
+          <a href="#contact" class="rounded-full border-[3px] border-primary bg-secondary-container px-4 py-1.5 text-sm text-primary shadow-[0_4px_0_rgba(4,38,61,0.35)]">CONTACT</a>
+        </div>
+        <a href="#contact" class="rounded-full border-[3px] border-primary bg-secondary-container px-4 py-1.5 text-sm font-bold md:hidden">CONTACT</a>
+      </nav>
+    </header>
+
+    <!-- ======================= HERO / INTRO ======================= -->
+    <section class="grain relative flex min-h-screen flex-col overflow-hidden bg-[#04263d]" id="intro">
+      <div class="absolute inset-0" style="background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(4,38,61,0.68), rgba(6,74,107,0.46), rgba(10,110,143,0.56)), url('BACKGORUND%20LAUT%20SUPER%20HD.jpeg'); background-size: 18px 18px, cover, cover; background-position: 0 0, center 22%, center 22%; background-repeat: repeat, no-repeat, no-repeat; filter: brightness(1.12) saturate(1.06);"></div>
+      <svg class="twinkle absolute left-[6%] top-[14%] h-5 w-5 text-[#ffd166]"><use href="#star-shape"/></svg>
+      <svg class="twinkle absolute right-[18%] top-[10%] h-3 w-3 text-white" style="animation-delay:0.6s"><use href="#star-shape"/></svg>
+      <svg class="twinkle absolute left-[12%] top-[38%] h-4 w-4 text-white" style="animation-delay:1.2s"><use href="#star-shape"/></svg>
+      <svg class="twinkle absolute right-[8%] top-[42%] h-5 w-5 text-[#5eead4]" style="animation-delay:1.8s"><use href="#star-shape"/></svg>
+      <svg class="twinkle absolute left-[28%] top-[8%] h-3 w-3 text-[#ff6b6b]" style="animation-delay:2.2s"><use href="#star-shape"/></svg>
+
+      <div class="bubble" style="left:6%; width:12px; height:12px; animation-delay:0s;"></div>
+      <div class="bubble" style="left:18%; width:18px; height:18px; animation-delay:3s;"></div>
+      <div class="bubble" style="left:34%; width:10px; height:10px; animation-delay:6s;"></div>
+      <div class="bubble" style="left:52%; width:16px; height:16px; animation-delay:2s;"></div>
+      <div class="bubble" style="left:68%; width:11px; height:11px; animation-delay:5s;"></div>
+      <div class="bubble" style="left:84%; width:20px; height:20px; animation-delay:7.5s;"></div>
+      <div class="bubble" style="left:92%; width:13px; height:13px; animation-delay:4s;"></div>
+
+      <div class="jelly-float absolute right-[8%] top-[10%] hidden h-28 w-28 items-center justify-center rounded-full bg-[#48cae4]/25 text-6xl backdrop-blur-sm md:flex" style="animation-delay:0.5s">🪼</div>
+      <span class="fish-swim absolute top-[22%] h-8 w-8 text-3xl">🐠</span>
+      <span class="fish-swim absolute top-[65%] h-6 w-6 text-2xl" style="animation-delay:1s">🐟</span>
+
+      <svg class="starfish-spin absolute -right-12 -top-12 h-44 w-44 text-[#ff9e5e]/50" viewBox="0 0 120 120" fill="currentColor">
+        <g>
+          <rect x="55" y="0" width="10" height="22" rx="5"></rect>
+          <rect x="55" y="98" width="10" height="22" rx="5"></rect>
+          <rect x="0" y="55" width="22" height="10" rx="5"></rect>
+          <rect x="98" y="55" width="22" height="10" rx="5"></rect>
+          <rect x="14" y="14" width="10" height="22" rx="5" transform="rotate(45 19 25)"></rect>
+          <rect x="96" y="14" width="10" height="22" rx="5" transform="rotate(135 101 25)"></rect>
+          <rect x="14" y="84" width="10" height="22" rx="5" transform="rotate(135 19 95)"></rect>
+          <rect x="96" y="84" width="10" height="22" rx="5" transform="rotate(45 101 95)"></rect>
+          <circle cx="60" cy="60" r="18"></circle>
+        </g>
+      </svg>
+
+      <div class="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-5 py-16 md:px-8 md:py-20">
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full bg-[#ffd166] px-4 py-1.5 text-sm font-extrabold text-[#04263d]">🌊 GRADE 12 DKV PORTFOLIO</span>
+          <span class="inline-flex h-6 w-6 items-center justify-center rounded-full border-[3px] border-[#04263d] bg-[#ffd166] text-[10px]">⚓</span>
+        </div>
+
+        <h1 id="portfolio-title" class="mt-6 whitespace-nowrap select-none text-[#eaf7ff] uppercase leading-[0.9] tracking-[0.04em] text-[clamp(60px,18vw,104px)] md:text-[clamp(108px,16vw,220px)] font-bold" style="font-family: Luckiest Guy, sans-serif; transform: scaleY(1.05) scaleX(1); text-shadow: 0 6px 0 rgba(72,202,228,0.9), 0 14px 28px rgba(0,0,0,0.35);">
+          <span class="bubble-letter">P</span><span class="bubble-letter">o</span><span class="bubble-letter">r</span><span class="bubble-letter">t</span><span class="bubble-letter">f</span><span class="bubble-letter">o</span><span class="bubble-letter">l</span><span class="bubble-letter">i</span><span class="bubble-letter">o</span>
+        </h1>
+
+        <div class="mt-6 flex flex-wrap items-end gap-4">
+          <div>
+            <p class="text-2xl font-bold text-white md:text-3xl" style="font-family: Chewy, cursive;">
+              Hi, I'm <span class="text-[#ffd166]">Bahru Mafdloluddin S. Rohmad</span>
+            </p>
+            <p class="mt-2 max-w-xl text-base leading-relaxed text-white/85 md:text-lg">
+              A multimedia design student whose ideas live somewhere between the shoreline, the deep blue, and a whole lot of sea breeze.
+            </p>
+          </div>
+          <div class="hidden max-w-[220px] rotate-2 rounded-2xl border-[3px] border-[#ffd166] bg-[#eaf7ff] px-4 py-3 text-sm font-bold text-[#04263d] shadow-[6px_6px_0_rgba(0,0,0,0.3)] md:block">
+            LET'S CREATE SOMETHING TIDAL 🌊
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#works" class="rounded-full bg-[#ffd166] px-7 py-3 text-base font-extrabold text-[#04263d] shadow-[0_6px_0_rgba(0,0,0,0.3)] transition hover:translate-y-[3px] hover:shadow-[0_3px_0_rgba(0,0,0,0.3)]">SEE MY WORKS ↓</a>
+          <a href="#contact" class="rounded-full border-[3px] border-white/70 px-7 py-3 text-base font-extrabold text-white transition hover:bg-white/10">LET'S TALK 🐚</a>
+        </div>
+      </div>
+
+      <a href="#about" class="absolute bottom-8 left-1/2 z-20 hidden -translate-x-1/2 animate-bounce text-3xl text-[#ffd166] md:block" aria-label="Scroll down">☟</a>
+
+      <div class="absolute bottom-0 left-0 z-10 h-16 w-full overflow-hidden pointer-events-none">
+        <svg class="wave-anim text-[#eaf7ff]" viewBox="0 0 1440 100" preserveAspectRatio="none" fill="currentColor">
+          <path d="M0,60 C22,32 44,32 66,60 C88,88 110,88 132,60 C154,32 176,32 198,60 C220,88 242,88 264,60 C286,32 308,32 330,60 C352,88 374,88 396,60 C418,32 440,32 462,60 C484,88 506,88 528,60 C550,32 572,32 594,60 C616,88 638,88 660,60 C682,32 704,32 726,60 C748,88 770,88 792,60 C814,32 836,32 858,60 C880,88 902,88 924,60 C946,32 968,32 990,60 C1012,88 1034,88 1056,60 C1078,32 1100,32 1122,60 C1144,88 1166,88 1188,60 C1210,32 1232,32 1254,60 C1276,88 1298,88 1320,60 C1342,32 1364,32 1386,60 C1408,88 1440,88 1440,60 L1440,100 L0,100 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ======================= MARQUEE 1 — AQUA ======================= -->
+    <div class="overflow-hidden border-y-[3px] border-[#04263d] bg-[#48cae4] py-2 md:py-2.5">
+      <div class="marquee-track whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.08em] text-[#04263d] md:text-[11px]" aria-hidden="true">
+        <span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- ======================= ABOUT ======================= -->
+    <section class="relative overflow-hidden bg-[#48cae4] pt-10 md:pt-14" id="about" style="background-image: linear-gradient(to bottom, rgba(202,240,251,0.55), rgba(72,202,228,0.3), rgba(0,119,182,0.55)), url('BACKGROUND%20LAUT%202%20SUPER%20HD.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <span class="fish-swim absolute top-[8%] h-6 w-6 text-2xl" style="animation-delay:2s">🐠</span>
+      <div class="pointer-events-none absolute inset-0 hidden lg:block">
+        <span class="absolute left-[5%] top-[10%] text-2xl opacity-60" style="animation: bob 7s ease-in-out infinite;">🐚</span>
+        <span class="absolute left-[9%] top-[38%] rotate-12 text-lg opacity-50" style="animation: bob 9s ease-in-out infinite; animation-delay:1s;">⭐</span>
+        <span class="absolute left-[40%] top-[6%] text-xl opacity-50" style="animation: bob 8s ease-in-out infinite; animation-delay:2s;">🌊</span>
+        <span class="absolute right-[8%] top-[12%] text-3xl opacity-40" style="animation: jelly 6s ease-in-out infinite;">🪸</span>
+        <span class="absolute right-[18%] top-[55%] text-2xl opacity-50 rotate-6" style="animation: bob 8s ease-in-out infinite; animation-delay:0.5s;">🐬</span>
+        <span class="absolute left-[2%] bottom-[6%] text-7xl opacity-10">🐳</span>
+        <span class="absolute right-[3%] bottom-[10%] text-2xl opacity-50" style="animation: jelly 7s ease-in-out infinite; animation-delay:1.5s;">🪼</span>
+        <span class="absolute left-[44%] bottom-[14%] rotate-6 text-xl opacity-40" style="animation: bob 10s ease-in-out infinite;">🐙</span>
+        <span class="absolute right-[12%] bottom-[4%] text-lg opacity-50" style="animation: bob 6s ease-in-out infinite; animation-delay:0.8s;">🐟</span>
+      </div>
+      <div class="pointer-events-none absolute inset-0 overflow-hidden">
+        <svg class="absolute bottom-0 left-0 h-28 w-full text-[#0a6e8f]/25" viewBox="0 0 1440 120" preserveAspectRatio="none" fill="currentColor">
+          <circle cx="50" cy="120" r="55"></circle>
+          <circle cx="170" cy="120" r="65"></circle>
+          <circle cx="310" cy="120" r="50"></circle>
+          <circle cx="470" cy="120" r="60"></circle>
+          <circle cx="610" cy="120" r="70"></circle>
+          <circle cx="770" cy="120" r="52"></circle>
+          <circle cx="930" cy="120" r="62"></circle>
+          <circle cx="1090" cy="120" r="56"></circle>
+          <circle cx="1250" cy="120" r="66"></circle>
+          <circle cx="1390" cy="120" r="55"></circle>
+          <rect x="0" y="102" width="1440" height="18"></rect>
+        </svg>
+        <div class="seaweed-sway absolute bottom-0 left-6 hidden md:block" style="color:#0a6e8f; animation-delay:0.3s">
+          <svg class="h-40 w-14" viewBox="0 0 48 140" fill="currentColor">
+            <path d="M22 140 C10 128 34 122 18 110 C6 100 38 92 20 80 C8 70 36 62 22 50 C10 40 32 34 20 22 C14 14 20 6 22 2 L30 2 C36 12 30 20 38 30 C44 40 26 50 36 62 C46 72 18 82 32 92 C42 100 16 110 30 118 C36 122 30 132 30 140 Z"></path>
+            <path d="M40 140 C34 130 46 124 36 114 C28 106 44 100 34 92 C28 86 34 78 32 70" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"></path>
+          </svg>
+        </div>
+        <div class="seaweed-sway absolute bottom-0 right-6 hidden md:block" style="color:#5eead4; animation-delay:1.2s; animation-duration:5s">
+          <svg class="h-32 w-12" viewBox="0 0 40 140" fill="currentColor">
+            <path d="M20 140 C10 128 34 124 18 112 C8 102 32 96 20 84 C10 74 34 66 22 54 C12 44 32 40 22 28 C18 20 22 10 24 4 L30 4 C36 12 30 20 36 28 C42 36 24 48 33 58 C40 68 18 80 29 88 C38 96 12 106 25 114 C32 118 28 128 30 140 Z"></path>
+            <path d="M34 140 C30 128 40 122 32 112" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"></path>
+          </svg>
+        </div>
+        <div class="absolute bottom-0 left-28 hidden md:block" style="color:#ff9e5e">
+          <svg class="h-20 w-14" viewBox="0 0 60 120" fill="currentColor">
+            <path d="M30 120 L30 82" stroke="currentColor" stroke-width="9" stroke-linecap="round" fill="none"></path>
+            <path d="M30 92 C20 84 14 82 8 74" stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none"></path>
+            <path d="M30 86 C42 78 48 76 54 68" stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none"></path>
+            <circle cx="8" cy="74" r="7"></circle>
+            <circle cx="54" cy="68" r="7"></circle>
+            <circle cx="30" cy="82" r="8"></circle>
+          </svg>
+        </div>
+        <div class="absolute bottom-0 right-32 hidden md:block" style="color:#ffd166">
+          <svg class="h-16 w-12" viewBox="0 0 60 120" fill="currentColor">
+            <path d="M30 120 L30 86" stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none"></path>
+            <path d="M30 94 C20 88 14 86 8 80" stroke="currentColor" stroke-width="7" stroke-linecap="round" fill="none"></path>
+            <path d="M30 90 C42 82 48 80 54 74" stroke="currentColor" stroke-width="7" stroke-linecap="round" fill="none"></path>
+            <circle cx="8" cy="80" r="6.5"></circle>
+            <circle cx="54" cy="74" r="6.5"></circle>
+            <circle cx="30" cy="86" r="7"></circle>
+          </svg>
+        </div>
+        <div class="absolute bottom-0 left-1/2 hidden md:block" style="color:#48cae4">
+          <svg class="h-14 w-10" viewBox="0 0 60 120" fill="currentColor">
+            <path d="M30 120 L30 88" stroke="currentColor" stroke-width="7" stroke-linecap="round" fill="none"></path>
+            <path d="M30 96 C20 90 16 88 10 82" stroke="currentColor" stroke-width="6" stroke-linecap="round" fill="none"></path>
+            <circle cx="10" cy="82" r="6"></circle>
+            <circle cx="30" cy="88" r="6.5"></circle>
+          </svg>
+        </div>
+        <div class="absolute bottom-0 left-[2%] hidden md:block" style="color:#ff8fa3">
+          <svg class="h-12 w-14" viewBox="0 0 60 44" fill="currentColor">
+            <ellipse cx="18" cy="38" rx="14" ry="10"></ellipse>
+            <ellipse cx="36" cy="36" rx="16" ry="12"></ellipse>
+            <ellipse cx="50" cy="40" rx="10" ry="8"></ellipse>
+            <circle cx="28" cy="30" r="3.5" fill="white" opacity="0.55"></circle>
+            <circle cx="44" cy="28" r="3" fill="white" opacity="0.5"></circle>
+          </svg>
+        </div>
+        <div class="absolute bottom-0 left-[12%] hidden md:block" style="color:#8fcc8f">
+          <svg class="h-12 w-14" viewBox="0 0 60 44" fill="currentColor">
+            <ellipse cx="18" cy="38" rx="14" ry="10"></ellipse>
+            <ellipse cx="36" cy="36" rx="16" ry="12"></ellipse>
+            <ellipse cx="50" cy="40" rx="10" ry="8"></ellipse>
+            <circle cx="28" cy="30" r="3.5" fill="white" opacity="0.55"></circle>
+            <circle cx="44" cy="28" r="3" fill="white" opacity="0.5"></circle>
+          </svg>
+        </div>
+        <div class="absolute bottom-0 left-[23%] hidden md:block" style="color:#58b7d9">
+          <svg class="h-12 w-14" viewBox="0 0 60 44" fill="currentColor">
+            <ellipse cx="18" cy="38" rx="14" ry="10"></ellipse>
+            <ellipse cx="36" cy="36" rx="16" ry="12"></ellipse>
+            <ellipse cx="50" cy="40" rx="10" ry="8"></ellipse>
+            <circle cx="28" cy="30" r="3" fill="white" opacity="0.55"></circle>
+          </svg>
+        </div>
+        <div class="absolute bottom-0 right-[3%] hidden md:block" style="color:#8fcc8f">
+          <svg class="h-12 w-14" viewBox="0 0 60 44" fill="currentColor">
+            <ellipse cx="18" cy="38" rx="14" ry="10"></ellipse>
+            <ellipse cx="36" cy="36" rx="16" ry="12"></ellipse>
+            <ellipse cx="50" cy="40" rx="10" ry="8"></ellipse>
+            <circle cx="28" cy="30" r="3.5" fill="white" opacity="0.55"></circle>
+            <circle cx="44" cy="28" r="3" fill="white" opacity="0.5"></circle>
+          </svg>
+        </div>
+        <div class="absolute bottom-0 right-[12%] hidden md:block" style="color:#ff8fa3">
+          <svg class="h-12 w-14" viewBox="0 0 60 44" fill="currentColor">
+            <ellipse cx="18" cy="38" rx="14" ry="10"></ellipse>
+            <ellipse cx="36" cy="36" rx="16" ry="12"></ellipse>
+            <ellipse cx="50" cy="40" rx="10" ry="8"></ellipse>
+            <circle cx="28" cy="30" r="3.5" fill="white" opacity="0.55"></circle>
+            <circle cx="44" cy="28" r="3" fill="white" opacity="0.5"></circle>
+          </svg>
+        </div>
+        <div class="absolute bottom-0 right-[23%] hidden md:block" style="color:#58b7d9">
+          <svg class="h-12 w-14" viewBox="0 0 60 44" fill="currentColor">
+            <ellipse cx="18" cy="38" rx="14" ry="10"></ellipse>
+            <ellipse cx="36" cy="36" rx="16" ry="12"></ellipse>
+            <ellipse cx="50" cy="40" rx="10" ry="8"></ellipse>
+            <circle cx="28" cy="30" r="3" fill="white" opacity="0.55"></circle>
+          </svg>
+        </div>
+        <span class="absolute bottom-3 left-1/3 hidden text-2xl opacity-80 md:block">⭐</span>
+        <span class="absolute bottom-2 right-1/3 hidden text-xl opacity-80 md:block">🐚</span>
+      </div>
+      <div class="relative mx-auto max-w-7xl px-5 md:px-8">
+        <div class="jelly-float absolute -left-16 top-16 hidden text-6xl md:block" style="animation-delay:0.5s">🪼</div>
+        <div class="photo-bob absolute right-[4%] -top-4 z-[7] hidden w-[min(42vw,360px)] md:block">
+          <div class="rotate-2 rounded-3xl border-4 border-[#48cae4] bg-[#eaf7ff] p-2.5 shadow-[10px_10px_0_rgba(4,38,61,0.3)]">
+            <div class="overflow-hidden rounded-2xl border-2 border-[#04263d]">
+              <img alt="" class="aspect-[3/4] w-full object-cover object-top" src="IMAGE/FOTO%20BAHRU%20LAUT.PNG"/>
+            </div>
+            <div class="mt-2 flex items-center justify-between gap-2 px-1">
+              <span class="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#04263d]">Bahru Mafdloluddin</span>
+              <span class="rounded-full bg-[#48cae4] px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-widest text-[#04263d]">Ocean Dreams</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative z-10 max-w-3xl pb-10">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center gap-2 rounded-full border-[3px] border-[#0a3a5c] bg-[#48cae4] px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.2em] text-[#04263d]">🌊 OCEAN BIODATA</span>
+            <span class="inline-flex items-center gap-1 rounded-full border-[2px] border-[#0a3a5c] bg-white/70 px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest text-[#0a6e8f]">🐚 THE DEEP BLUE</span>
+          </div>
+          <h2 class="mt-5 text-5xl font-bold leading-[1.05] md:text-7xl" style="font-family: Luckiest Guy, sans-serif; color:#04263d; text-shadow: 2px 2px 0 rgba(255,255,255,0.55);"><span class="bubble-letter">B</span><span class="bubble-letter">a</span><span class="bubble-letter">h</span><span class="bubble-letter">r</span><span class="bubble-letter">u</span> <span class="bubble-letter">M</span><span class="bubble-letter">a</span><span class="bubble-letter">f</span><span class="bubble-letter">d</span><span class="bubble-letter">l</span><span class="bubble-letter">o</span><span class="bubble-letter">l</span><span class="bubble-letter">u</span><span class="bubble-letter">d</span><span class="bubble-letter">d</span><span class="bubble-letter">i</span><span class="bubble-letter">n</span></h2>
+          <div class="mt-3 flex items-center gap-2 text-[#0a6e8f]">
+            <span class="h-1.5 w-10 rounded-full bg-[#48cae4]"></span>
+            <span class="h-1.5 w-16 rounded-full bg-[#0a6e8f]"></span>
+            <span class="h-1.5 w-10 rounded-full bg-[#48cae4]"></span>
+          </div>
+          <p class="mt-3 text-lg font-extrabold uppercase tracking-widest text-[#04263d]" style="text-shadow: 0 1px 2px rgba(255,255,255,0.85);">Grade 12 DKV · Graphic Designer</p>
+          <div class="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-[#04263d] md:text-lg" style="text-shadow: 0 1px 2px rgba(255,255,255,0.85);">
+            <p>
+              As a Grade 12 Visual Communication Design student, I enjoy turning ideas into visual designs that are clear, creative, and meaningful. I explore branding, graphic design, illustration, and digital media while continuously developing my skills through school projects and personal works.
+            </p>
+            <p>
+              I'm always curious about new visual styles, experimenting with colors, layouts, and typography. For me, every project is an opportunity to learn, improve, and create something that represents my own creative identity.
+            </p>
+          </div>
+          <div class="mt-6 grid max-w-2xl grid-cols-2 gap-3 md:grid-cols-4">
+            <div class="flex items-center gap-2 rounded-2xl border-2 border-[#0a3a5c] bg-white/70 px-3 py-2 text-sm font-bold text-[#04263d] shadow-[3px_3px_0_rgba(10,58,92,0.2)]">🌊 Wave Rider</div>
+            <div class="flex items-center gap-2 rounded-2xl border-2 border-[#0a3a5c] bg-white/70 px-3 py-2 text-sm font-bold text-[#04263d] shadow-[3px_3px_0_rgba(10,58,92,0.2)]">🪸 Coral Curious</div>
+            <div class="flex items-center gap-2 rounded-2xl border-2 border-[#0a3a5c] bg-white/70 px-3 py-2 text-sm font-bold text-[#04263d] shadow-[3px_3px_0_rgba(10,58,92,0.2)]">🐚 Shell Collector</div>
+            <div class="flex items-center gap-2 rounded-2xl border-2 border-[#0a3a5c] bg-white/70 px-3 py-2 text-sm font-bold text-[#04263d] shadow-[3px_3px_0_rgba(10,58,92,0.2)]">🧜 Deep Diver</div>
+          </div>
+        </div>
+
+        <div class="relative z-10 inline-block max-w-full rounded-2xl bg-[#0a3a5c] px-5 py-2.5 md:px-6 md:py-3">
+          <div class="grid grid-cols-4 gap-4 sm:gap-6">
+            <div class="flex flex-col items-center justify-center text-center">
+              <div class="flex items-baseline gap-1.5 whitespace-nowrap">
+                <span class="text-lg font-bold leading-none text-[#ffd166] md:text-xl" style="font-family: Bebas Neue, cursive;">12+</span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-white/80">Design Projects</span>
+              </div>
+            </div>
+            <div class="flex flex-col items-center justify-center text-center">
+              <div class="flex items-baseline gap-1.5 whitespace-nowrap">
+                <span class="text-lg font-bold leading-none text-[#ffd166] md:text-xl" style="font-family: Bebas Neue, cursive;">5+</span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-white/80">Brand Identity</span>
+              </div>
+            </div>
+            <div class="flex flex-col items-center justify-center text-center">
+              <div class="flex items-baseline gap-1.5 whitespace-nowrap">
+                <span class="text-lg font-bold leading-none text-[#ffd166] md:text-xl" style="font-family: Bebas Neue, cursive;">4+</span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-white/80">App UI UX</span>
+              </div>
+            </div>
+            <div class="flex flex-col items-center justify-center text-center">
+              <div class="flex items-baseline gap-1.5 whitespace-nowrap">
+                <span class="text-lg font-bold leading-none text-[#ffd166] md:text-xl" style="font-family: Bebas Neue, cursive;">3+</span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-white/80">Manufacturing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= MARQUEE 2 — CORAL ======================= -->
+    <div class="overflow-hidden border-y-[3px] border-[#04263d] bg-[#93c5fd] py-2 md:py-2.5">
+      <div class="marquee-track whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.08em] text-[#04263d] md:text-[11px]" aria-hidden="true">
+        <span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- ======================= TOOLS + PROCESS ======================= -->
+    <section class="grid grid-cols-1 bg-background lg:grid-cols-12" id="tools">
+      <div class="relative overflow-hidden border-[3px] border-[#04263d] bg-[#0a6e8f] p-8 md:p-12 lg:col-span-5" style="background-image: linear-gradient(rgba(4,38,61,0.38), rgba(10,70,110,0.46)), url('BACKGROUND%20LAUT%203%20SUPER%20HD.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="pointer-events-none absolute inset-0 z-0">
+          <span class="bubble" style="left:8%; width:10px; height:10px; animation-duration:12s;"></span>
+          <span class="bubble" style="left:24%; width:16px; height:16px; animation-duration:16s; animation-delay:3s;"></span>
+          <span class="bubble" style="left:46%; width:8px; height:8px; animation-duration:11s; animation-delay:1.5s;"></span>
+          <span class="bubble" style="left:66%; width:14px; height:14px; animation-duration:18s; animation-delay:5s;"></span>
+          <span class="bubble" style="left:82%; width:20px; height:20px; animation-duration:15s; animation-delay:2s;"></span>
+          <span class="bubble" style="left:93%; width:12px; height:12px; animation-duration:13s; animation-delay:6s;"></span>
+          <span class="absolute right-5 top-6 text-4xl opacity-20">🐚</span>
+          <span class="absolute bottom-6 right-10 text-2xl opacity-30" style="animation: bob 6s ease-in-out infinite;">⭐</span>
+        </div>
+        <div class="relative z-10">
+        <span class="inline-block -rotate-2 rounded-full border-[3px] border-[#04263d] bg-[#5eead4] px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.2em] text-[#04263d] shadow-[3px_3px_0_rgba(4,38,61,0.35)]">🌊 TOOLKIT</span>
+        <h2 class="mt-6 inline-block -rotate-1 text-4xl font-bold leading-tight text-[#eaf7ff] md:text-5xl" style="font-family: Luckiest Guy, cursive; text-shadow: 3px 3px 0 rgba(4,38,61,0.5);">MY DESIGN<br/>TOOLS</h2>
+        <p class="mt-4 max-w-sm text-base leading-relaxed text-white/85">A few trusted tools that help me set sail past the horizon and into the big, wide world.</p>
+        <div class="mt-8 flex flex-col gap-3">
+          <div class="flex -rotate-1 items-center gap-3 rounded-2xl border-[3px] border-[#04263d] bg-white/10 px-3 py-2 transition-transform hover:rotate-0 hover:-translate-y-1"><span class="grid h-10 w-10 place-items-center rounded-full border-[2px] border-[#04263d] bg-[#ffd166] overflow-hidden shadow-[0_3px_0_rgba(0,0,0,0.25)]"><img alt="Figma" class="h-full w-full object-cover" src="IMAGE/LOGO%20FIGMA.jpg"/></span><span class="font-bold text-[#eaf7ff]">Figma</span></div>
+          <div class="flex rotate-1 items-center gap-3 rounded-2xl border-[3px] border-[#04263d] bg-white/10 px-3 py-2 transition-transform hover:rotate-0 hover:-translate-y-1"><span class="grid h-10 w-10 place-items-center rounded-full border-[2px] border-[#04263d] bg-[#ff9e5e] overflow-hidden shadow-[0_3px_0_rgba(0,0,0,0.25)]"><img alt="Illustrator" class="h-full w-full object-cover" src="IMAGE/LOGO%20ADOBE.jpg"/></span><span class="font-bold text-[#eaf7ff]">Illustrator</span></div>
+          <div class="flex -rotate-1 items-center gap-3 rounded-2xl border-[3px] border-[#04263d] bg-white/10 px-3 py-2 transition-transform hover:rotate-0 hover:-translate-y-1"><span class="grid h-10 w-10 place-items-center rounded-full border-[2px] border-[#04263d] bg-[#48cae4] overflow-hidden shadow-[0_3px_0_rgba(0,0,0,0.25)]"><img alt="Corel" class="h-full w-full object-cover" src="IMAGE/LOGO%20COREL.jpg"/></span><span class="font-bold text-[#eaf7ff]">Corel</span></div>
+          <div class="flex rotate-1 items-center gap-3 rounded-2xl border-[3px] border-[#04263d] bg-white/10 px-3 py-2 transition-transform hover:rotate-0 hover:-translate-y-1"><span class="grid h-10 w-10 place-items-center rounded-full border-[2px] border-[#04263d] bg-[#5eead4] overflow-hidden shadow-[0_3px_0_rgba(0,0,0,0.25)]"><img alt="Canva" class="h-full w-full object-cover" src="IMAGE/LOGO%20CANVA.jpg"/></span><span class="font-bold text-[#eaf7ff]">Canva</span></div>
+          <div class="flex -rotate-1 items-center gap-3 rounded-2xl border-[3px] border-[#04263d] bg-white/10 px-3 py-2 transition-transform hover:rotate-0 hover:-translate-y-1"><span class="grid h-10 w-10 place-items-center rounded-full border-[2px] border-[#04263d] bg-[#ff8fa3] overflow-hidden shadow-[0_3px_0_rgba(0,0,0,0.25)]"><img alt="Blender" class="h-full w-full object-cover" src="IMAGE/LOGO%20BLENDER.jpg"/></span><span class="font-bold text-[#eaf7ff]">Blender</span></div>
+        </div>
+        </div>
+      </div>
+
+      <div class="relative overflow-hidden bg-[#0a3a5c] p-8 md:p-12 lg:col-span-7" id="process" style="background-image: linear-gradient(rgba(4,38,61,0.45), rgba(10,70,110,0.55)), url('BACKGROUND%20LAUT%203%20SUPER%20HD.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="pointer-events-none absolute inset-0 z-0">
+          <span class="bubble" style="left:12%; width:12px; height:12px; animation-duration:14s;"></span>
+          <span class="bubble" style="left:34%; width:8px; height:8px; animation-duration:12s; animation-delay:4s;"></span>
+          <span class="bubble" style="left:58%; width:16px; height:16px; animation-duration:17s; animation-delay:2s;"></span>
+          <span class="bubble" style="left:78%; width:10px; height:10px; animation-duration:15s; animation-delay:6s;"></span>
+          <span class="bubble" style="left:90%; width:18px; height:18px; animation-duration:19s; animation-delay:1s;"></span>
+          <span class="fish-swim absolute bottom-8 left-0 text-3xl opacity-25" style="animation-delay:3s;">🐟</span>
+          <svg class="twinkle absolute right-[6%] top-10 h-5 w-5 text-[#5eead4]" style="animation-delay:0.6s"><use href="#star-shape"/></svg>
+          <svg class="twinkle absolute left-[6%] top-56 h-4 w-4 text-[#ffd166]" style="animation-delay:1.4s"><use href="#star-shape"/></svg>
+          <span class="absolute -bottom-2 right-8 text-5xl opacity-20">🪸</span>
+          <span class="absolute -bottom-2 left-1/2 text-4xl opacity-15">🐚</span>
+        </div>
+        <div class="relative z-10">
+        <span class="inline-block rotate-2 rounded-full border-[3px] border-[#04263d] bg-[#ffd166] px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.2em] text-[#04263d] shadow-[3px_3px_0_rgba(4,38,61,0.35)]">⚓ HOW I WORK</span>
+        <h2 class="mt-6 inline-block rotate-1 text-4xl font-bold leading-tight text-[#ffd166] md:text-5xl" style="font-family: Luckiest Guy, cursive; text-shadow: 3px 3px 0 rgba(0,0,0,0.35);">MY DESIGN PROCESS</h2>
+        <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div class="-rotate-1 rounded-3xl border-[3px] border-[#04263d] bg-[#eaf7ff] p-6 transition-transform hover:rotate-0 hover:-translate-y-1">
+            <span class="grid h-11 w-11 place-items-center rounded-full border-[3px] border-[#04263d] bg-[#48cae4] text-2xl font-bold text-[#04263d] shadow-[0_3px_0_rgba(0,0,0,0.25)]" style="font-family: Bebas Neue, cursive;">01</span>
+            <h3 class="mt-3 text-lg font-extrabold">🧭 Explore &amp; Research</h3>
+            <p class="mt-1 text-sm text-[#3d5a73]">Understand the brief, brand, and audience before any pixel is placed.</p>
+          </div>
+          <div class="rotate-1 rounded-3xl border-[3px] border-[#04263d] bg-[#eaf7ff] p-6 transition-transform hover:rotate-0 hover:-translate-y-1">
+            <span class="grid h-11 w-11 place-items-center rounded-full border-[3px] border-[#04263d] bg-[#5eead4] text-2xl font-bold text-[#04263d] shadow-[0_3px_0_rgba(0,0,0,0.25)]" style="font-family: Bebas Neue, cursive;">02</span>
+            <h3 class="mt-3 text-lg font-extrabold">✏️ Wireframe &amp; Sketch</h3>
+            <p class="mt-1 text-sm text-[#3d5a73]">Low-fi sketches that map the structure before the fun colors arrive.</p>
+          </div>
+          <div class="-rotate-1 rounded-3xl border-[3px] border-[#04263d] bg-[#eaf7ff] p-6 transition-transform hover:rotate-0 hover:-translate-y-1">
+            <span class="grid h-11 w-11 place-items-center rounded-full border-[3px] border-[#04263d] bg-[#ffd166] text-2xl font-bold text-[#04263d] shadow-[0_3px_0_rgba(0,0,0,0.25)]" style="font-family: Bebas Neue, cursive;">03</span>
+            <h3 class="mt-3 text-lg font-extrabold">🎨 Design &amp; Style</h3>
+            <p class="mt-1 text-sm text-[#3d5a73]">Build layout, type, and palette — calm waves, tidy shores.</p>
+          </div>
+          <div class="rotate-1 rounded-3xl border-[3px] border-[#04263d] bg-[#eaf7ff] p-6 transition-transform hover:rotate-0 hover:-translate-y-1">
+            <span class="grid h-11 w-11 place-items-center rounded-full border-[3px] border-[#04263d] bg-[#ff9e5e] text-2xl font-bold text-[#04263d] shadow-[0_3px_0_rgba(0,0,0,0.25)]" style="font-family: Bebas Neue, cursive;">04</span>
+            <h3 class="mt-3 text-lg font-extrabold">🧪 Prototype &amp; Review</h3>
+            <p class="mt-1 text-sm text-[#3d5a73]">Bring it to life, gather feedback, and iterate with a happy dance.</p>
+          </div>
+          <div class="-rotate-1 rounded-3xl border-[3px] border-[#04263d] bg-[#eaf7ff] p-6 transition-transform hover:rotate-0 hover:-translate-y-1 md:col-span-2">
+            <span class="grid h-11 w-11 place-items-center rounded-full border-[3px] border-[#04263d] bg-[#ff8fa3] text-2xl font-bold text-[#04263d] shadow-[0_3px_0_rgba(0,0,0,0.25)]" style="font-family: Bebas Neue, cursive;">05</span>
+            <h3 class="mt-3 text-lg font-extrabold">🚀 Deliver &amp; Support</h3>
+            <p class="mt-1 text-sm text-[#3d5a73]">Export clean files, hand off, and support the brand way beyond the first launch.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= MARQUEE 3 — MINT ======================= -->
+    <div class="overflow-hidden border-y-[3px] border-[#04263d] bg-[#5eead4] py-2 md:py-2.5">
+      <div class="marquee-track whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.08em] text-[#04263d] md:text-[11px]" aria-hidden="true">
+        <span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- ======================= WORKS ======================= -->
+    <section class="relative overflow-hidden bg-[#48cae4] py-16 md:py-20" id="works" style="background-image: linear-gradient(to bottom, rgba(202,240,251,0.68), rgba(72,202,228,0.5), rgba(0,119,182,0.72)), url('BACKGROUND%20LAUT%204%20SUPER%20HD.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <div class="pointer-events-none absolute inset-0">
+        <svg class="twinkle absolute right-[6%] top-10 h-6 w-6 text-[#ffd166]" style="animation-delay:0.4s"><use href="#star-shape"/></svg>
+        <svg class="twinkle absolute left-[4%] top-24 h-4 w-4 text-white" style="animation-delay:1s"><use href="#star-shape"/></svg>
+        <span class="jelly-float absolute right-[12%] top-[26%] hidden text-4xl opacity-60 md:block" style="animation-delay:0.5s;">🪼</span>
+        <span class="absolute left-[6%] top-[34%] hidden text-5xl opacity-25 md:block">🐳</span>
+        <span class="fish-swim absolute top-[30%] h-7 w-7 text-2xl opacity-70" style="animation-delay:2s">🐠</span>
+        <span class="absolute bottom-28 left-[3%] hidden text-3xl opacity-90 md:block" style="animation: bob 6s ease-in-out infinite;">⭐</span>
+        <div class="absolute bottom-8 right-8 z-10 hidden h-24 w-24 rotate-12 rounded-2xl border-[3px] border-[#04263d] bg-[#ffd166] shadow-[6px_6px_0_rgba(4,38,61,0.4)] md:block">
+          <div class="flex h-full flex-col items-center justify-center text-[#04263d]">
+            <span class="text-2xl font-extrabold">Tide</span>
+            <span class="text-xs font-bold tracking-widest">WAVES</span>
+          </div>
+        </div>
+      </div>
+      <div class="pointer-events-none absolute inset-x-0 bottom-0">
+        <div class="absolute bottom-0 left-0 h-20 w-full overflow-hidden md:h-28">
+          <svg class="wave-anim" viewBox="0 0 1440 120" preserveAspectRatio="none" fill="none">
+            <defs>
+              <linearGradient id="worksWaveGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#7fe3ff"/>
+                <stop offset="45%" stop-color="#00b4d8"/>
+                <stop offset="100%" stop-color="#0a6e8f"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#worksWaveGrad)" d="M0,64 C60,26 120,26 180,64 C240,102 300,102 360,64 C420,26 480,26 540,64 C600,102 660,102 720,64 C780,26 840,26 900,64 C960,102 1020,102 1080,64 C1140,26 1200,26 1260,64 C1320,102 1380,102 1440,64 L1440,120 L0,120 Z"></path>
+            <path fill="none" stroke="#c8f4ff" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke" opacity="0.85" d="M0,64 C60,26 120,26 180,64 C240,102 300,102 360,64 C420,26 480,26 540,64 C600,102 660,102 720,64 C780,26 840,26 900,64 C960,102 1020,102 1080,64 C1140,26 1200,26 1260,64 C1320,102 1380,102 1440,64"></path>
+          </svg>
+        </div>
+        <span class="bubble" style="left:14%; width:12px; height:12px; animation-duration:13s;"></span>
+        <span class="bubble" style="left:44%; width:9px; height:9px; animation-duration:15s; animation-delay:4s;"></span>
+        <span class="bubble" style="left:72%; width:15px; height:15px; animation-duration:17s; animation-delay:2s;"></span>
+        <span class="absolute bottom-3 left-16 hidden text-3xl opacity-80 md:block">🐚</span>
+        <span class="absolute bottom-2 right-24 hidden text-4xl opacity-80 md:block">🪸</span>
+        <span class="fish-swim absolute bottom-12 left-0 text-2xl opacity-70" style="animation-delay:1s">🐟</span>
+      </div>
+      <div class="relative mx-auto max-w-7xl px-5 md:px-8">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <span class="inline-flex items-center gap-2 rounded-full border-[3px] border-[#04263d] bg-[#eaf7ff] px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.2em] text-[#04263d]">⚓ PORTFOLIO</span>
+            <h2 class="mt-5 inline-block text-5xl font-bold leading-[1.15] text-[#04263d] md:text-6xl" style="font-family: Luckiest Guy, cursive; background: linear-gradient(transparent 68%, #ffd166 68%);">SELECTED WORKS 🪼</h2>
+          </div>
+          <p class="max-w-xs text-sm font-bold text-[#04263d]/80 md:text-base">A peek under the surface — branding, app concepts, and artwork that got to go swim with the big fish.</p>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+          <a href="logo.html" class="card-lift block overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-[#eaf7ff] shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="h-44 overflow-hidden border-b-[3px] border-[#04263d] bg-[#0a6e8f] md:h-56"><img alt="Logo" class="h-full w-full object-cover" src="COVER%20LOGO.png"/></div>
+            <div class="p-6">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-extrabold uppercase">Logo</h3>
+                <span class="rounded-full bg-[#ffd166] px-3 py-1 text-xs font-extrabold text-[#04263d]">01</span>
+              </div>
+              <p class="mt-2 text-sm text-[#3d5a73]">Unique logo creation with timeless visual identity for modern businesses.</p>
+              <p class="mt-3 inline-flex items-center gap-1 font-extrabold text-[#0a6e8f] underline decoration-2 underline-offset-4">View gallery →</p>
+            </div>
+          </a>
+
+<a href="illustration.html" class="card-lift block overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-[#eaf7ff] shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="h-44 overflow-hidden border-b-[3px] border-[#04263d] bg-[#48cae4] md:h-56"><img alt="Illustration" class="h-full w-full object-cover" src="COVER%20ILLUTRASI.png"/></div>
+            <div class="p-6">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-extrabold uppercase">Illustration</h3>
+                <span class="rounded-full bg-[#5eead4] px-3 py-1 text-xs font-extrabold text-[#04263d]">02</span>
+              </div>
+              <p class="mt-2 text-sm text-[#3d5a73]">Creative digital Illustrations &amp; Manual Illustrations</p>
+              <p class="mt-3 inline-flex items-center gap-1 font-extrabold text-[#0a6e8f] underline decoration-2 underline-offset-4">View gallery →</p>
+            </div>
+          </a>
+
+          <a href="3d-modeling.html" class="card-lift block overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-[#eaf7ff] shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="h-44 overflow-hidden border-b-[3px] border-[#04263d] bg-[#5eead4] md:h-56"><img alt="3D Modeling" class="h-full w-full object-cover" src="COVER%203D.png"/></div>
+            <div class="p-6">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-extrabold uppercase">3D Modeling</h3>
+                <span class="rounded-full bg-[#48cae4] px-3 py-1 text-xs font-extrabold text-[#04263d]">03</span>
+              </div>
+              <p class="mt-2 text-sm text-[#3d5a73]">3D personal visualization</p>
+              <p class="mt-3 inline-flex items-center gap-1 font-extrabold text-[#0a6e8f] underline decoration-2 underline-offset-4">View gallery →</p>
+            </div>
+          </a>
+
+          <a href="personal-branding.html" class="card-lift block overflow-hidden rounded-3xl border-[3px] border-[#04263d] bg-[#eaf7ff] shadow-[8px_8px_0_rgba(4,38,61,0.35)]">
+            <div class="h-44 overflow-hidden border-b-[3px] border-[#04263d] bg-[#0a3a5c] md:h-56"><img alt="Brand Identity" class="h-full w-full object-cover" src="COVER%20BRANDING.png"/></div>
+            <div class="p-6">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-extrabold uppercase">PERSONAL BRANDING</h3>
+                <span class="rounded-full bg-[#ff8fa3] px-3 py-1 text-xs font-extrabold text-[#04263d]">04</span>
+              </div>
+              <p class="mt-2 text-sm text-[#3d5a73]">Crafting authentic visual identities that reflect your story, values, and professional presence.</p>
+              <p class="mt-3 inline-flex items-center gap-1 font-extrabold text-[#0a6e8f] underline decoration-2 underline-offset-4">View gallery →</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= MARQUEE 4 — DEEP BLUE ======================= -->
+    <div class="overflow-hidden border-y-[3px] border-[#04263d] bg-[#0a6e8f] py-2 md:py-2.5">
+      <div class="marquee-track whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.08em] text-[#eaf7ff] md:text-[11px]" aria-hidden="true">
+        <span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span><span class="px-4">MY&nbsp;DESIGN&nbsp;PORTFOLIO&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- ======================= CONTACT ======================= -->
+    <section class="grain relative overflow-hidden bg-[#04263d] py-16 md:py-20" id="contact">
+      <div class="absolute inset-0" style="background-image: linear-gradient(to bottom, rgba(10,58,92,0.78), rgba(4,38,61,0.85)), url('BACKGROUND%20PAGE%20LETS%20MAKE%20WAVE%20SUPER%20HD.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+      <svg class="twinkle absolute left-[8%] top-[18%] h-5 w-5 text-[#ffd166]"><use href="#star-shape"/></svg>
+      <svg class="twinkle absolute right-[12%] top-[24%] h-4 w-4 text-white" style="animation-delay:0.8s"><use href="#star-shape"/></svg>
+      <svg class="twinkle absolute left-[16%] bottom-[20%] h-4 w-4 text-[#5eead4]" style="animation-delay:1.4s"><use href="#star-shape"/></svg>
+      <div class="bubble" style="left:10%; width:10px; height:10px; animation-delay:1s;"></div>
+      <div class="bubble" style="left:80%; width:14px; height:14px; animation-delay:4s;"></div>
+      <div class="bubble" style="left:50%; width:9px; height:9px; animation-delay:7s;"></div>
+
+      <div class="relative mx-auto max-w-3xl px-5 text-center md:px-8">
+        <span class="mx-auto grid h-16 w-16 rotate-6 place-items-center rounded-2xl border-[3px] border-[#48cae4] bg-[#eaf7ff] text-3xl">🐚</span>
+        <h2 class="mt-8 text-4xl font-bold leading-[1.05] text-[#eaf7ff] md:text-6xl" style="font-family: Luckiest Guy, cursive; text-shadow: 4px 4px 0 rgba(4,38,61,0.7), 0 0 30px rgba(72,202,228,0.35);">
+          LET'S MAKE WAVES<br/>TOGETHER!
+        </h2>
+        <p class="mx-auto mt-5 max-w-md text-base leading-relaxed text-white/85 md:text-lg">Got an idea that wants to ride the tide? Drop me a message — I'll bring the sea breeze and the crayons.</p>
+        <div class="mt-9 rounded-3xl border-[3px] border-[#48cae4] bg-[#eaf7ff] p-6 shadow-[10px_10px_0_rgba(0,0,0,0.35)] md:p-8">
+          <p class="font-extrabold uppercase tracking-widest text-[#04263d]/70">Reach me at</p>
+          <p class="mt-2 text-xl font-extrabold text-[#04263d] md:text-2xl" style="font-family: Chewy, cursive;">bahrutungga1199@gmail.com</p>
+          <div class="mt-6 flex flex-wrap items-center justify-center gap-4">
+            <a href="mailto:bahrutungga1199@gmail.com" class="rounded-full bg-[#ffd166] px-6 py-3 text-base font-extrabold text-[#04263d] shadow-[0_5px_0_rgba(4,38,61,0.4)] transition hover:translate-y-[3px] hover:shadow-[0_2px_0_rgba(4,38,61,0.4)]">EMAIL ME 🐚</a>
+            <a href="#" class="rounded-full bg-[#5eead4] px-6 py-3 text-base font-extrabold text-[#04263d] shadow-[0_5px_0_rgba(4,38,61,0.4)] transition hover:translate-y-[3px] hover:shadow-[0_2px_0_rgba(4,38,61,0.4)]">MY CREDENTIALS 📜</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer class="relative overflow-hidden border-t-[3px] border-[#48cae4] bg-[#03202f] py-10">
+      <svg class="twinkle absolute left-[8%] top-6 h-3 w-3 text-[#ffd166]"><use href="#star-shape"/></svg>
+      <span class="fish-swim absolute bottom-4 left-0 h-5 w-5 text-xl" style="animation-delay:1s">🐟</span>
+      <span class="bubble" style="left:22%; width:10px; height:10px; animation-duration:16s;"></span>
+      <span class="bubble" style="left:60%; width:14px; height:14px; animation-duration:19s; animation-delay:3s;"></span>
+      <span class="bubble" style="left:88%; width:8px; height:8px; animation-duration:14s; animation-delay:6s;"></span>
+      <div class="seaweed-sway absolute -bottom-1 left-[6%] hidden text-4xl opacity-40 md:block" style="animation-delay:0.4s">🪸</div>
+      <div class="seaweed-sway absolute -bottom-1 right-[6%] hidden text-3xl opacity-40 md:block" style="animation-delay:1.1s; animation-duration:5s">🐚</div>
+      <span class="jelly-float absolute right-[14%] top-8 hidden text-3xl opacity-30 md:block" style="animation-delay:0.6s">🪼</span>
+      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-5 text-center md:flex-row md:px-8 md:text-left">
+        <div>
+          <div class="text-2xl font-bold text-[#48cae4]" style="font-family: Chewy, cursive;">Marino Valerie</div>
+          <p class="mt-1 text-sm text-white/70">© 2026 Bahru Mafdloluddin Sholeh Rohmad · All rights reserved</p>
+        </div>
+        <p class="max-w-sm text-xs leading-relaxed text-white/60 md:text-sm">Crafted with ocean currents, starfish skies &amp; a little tide-pulling flair.</p>
+        <div class="flex flex-wrap items-center justify-center gap-3 font-bold">
+          <a href="#" class="rounded-full border-2 border-white/30 px-3 py-1 text-xs text-white/80 transition hover:bg-white/10">Behance</a>
+          <a href="#" class="rounded-full border-2 border-white/30 px-3 py-1 text-xs text-white/80 transition hover:bg-white/10">Dribbble</a>
+          <a href="#" class="rounded-full border-2 border-white/30 px-3 py-1 text-xs text-white/80 transition hover:bg-white/10">Instagram</a>
+          <a href="#" class="rounded-full border-2 border-white/30 px-3 py-1 text-xs text-white/80 transition hover:bg-white/10">Resume</a>
+          <a href="#" class="rounded-full border-2 border-white/30 px-3 py-1 text-xs text-white/80 transition hover:bg-white/10">Email</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const spinner = document.querySelector(".starfish-spin");
+      if (spinner) {
+        spinner.addEventListener("click", () => {
+          spinner.style.animation = "none";
+          void spinner.offsetWidth;
+          spinner.style.animation = "starfish 0.8s linear infinite";
+          setTimeout(() => (spinner.style.animation = ""), 2000);
+        });
+      }
+      document.querySelectorAll(".poke-letter").forEach((el) => {
+        el.addEventListener("click", () => {
+          el.classList.remove("text-move");
+          void el.offsetWidth;
+          el.classList.add("text-move");
+          el.addEventListener(
+            "animationend",
+            () => el.classList.remove("text-move"),
+            { once: true }
+          );
+        });
+      });
+      document.querySelectorAll(".bubble-letter").forEach((el) => {
+        el.addEventListener("click", () => {
+          if (el.dataset.busy) return;
+          el.dataset.busy = "1";
+          const rect = el.getBoundingClientRect();
+          const size = Math.max(26, rect.width * 0.92);
+          const bubble = document.createElement("span");
+          bubble.className = "letter-bubble";
+          bubble.style.left = rect.left + rect.width / 2 + "px";
+          bubble.style.top = rect.top + rect.height / 2 + "px";
+          bubble.style.width = size + "px";
+          bubble.style.height = size + "px";
+          document.body.appendChild(bubble);
+          setTimeout(() => bubble.remove(), 1300);
+          el.classList.remove("letter-popped");
+          void el.offsetWidth;
+          el.classList.add("letter-popped");
+          el.addEventListener(
+            "animationend",
+            () => {
+              el.classList.remove("letter-popped");
+              delete el.dataset.busy;
+            },
+            { once: true }
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
